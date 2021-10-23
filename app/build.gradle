@@ -6,6 +6,13 @@ android {
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
 
+    // Added post getting this exception
+    // https://stackoverflow.com/questions/49891730/invoke-customs-are-only-supported-starting-with-android-0-min-api-26
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
     defaultConfig {
         applicationId "com.example.diceroller"
         minSdkVersion 16
