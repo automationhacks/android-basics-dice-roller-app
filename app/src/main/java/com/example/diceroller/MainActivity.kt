@@ -15,19 +15,23 @@ class MainActivity : AppCompatActivity() {
 
         val rollButton: Button = findViewById(R.id.button)
         // Set a click listener on the button to roll the dice when user taps the button
-        rollButton.setOnClickListener { rollDice() }
+        rollButton.setOnClickListener {
+            rollDice(R.id.imageView)
+            rollDice(R.id.imageView2)
+        }
 
         // Do a dice roll when the app starts
-        rollDice()
+        rollDice(R.id.imageView)
+        rollDice(R.id.imageView2)
     }
 
-    private fun rollDice() {
+    private fun rollDice(imageViewId : Int) {
         // Create new Dice object with 6 sides and roll it
         val dice = Dice(6)
         val diceRoll = dice.roll()
 
         // Update the screen with the dice roll image
-        val diceImage: ImageView = findViewById(R.id.imageView)
+        val diceImage: ImageView = findViewById(imageViewId)
         val diceImageResource = getDiceImageToDisplay(diceRoll)
         diceImage.setImageResource(diceImageResource)
         // (Accessibility) Set contentDescription to the dice roll to allow screen readers
