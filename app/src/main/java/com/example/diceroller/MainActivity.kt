@@ -21,11 +21,16 @@ class MainActivity : AppCompatActivity() {
     private fun rollDice() {
         // Create new Dice object with 6 sides and roll it
         val dice = Dice(6)
-        val diceRoll = dice.roll().toString()
+        val firstDiceRoll = dice.roll().toString()
+        val secondDiceRoll = dice.roll().toString()
 
         // Update the screen with the dice roll
-        val resultTextView: TextView = findViewById(R.id.textView)
-        resultTextView.text = diceRoll
+        val firstDiceTextView: TextView = findViewById(R.id.txtViewFirst)
+        firstDiceTextView.text = firstDiceRoll
+
+        // Update the screen for the second dice roll
+        val secondDiceTextView: TextView = findViewById(R.id.txtViewSecond)
+        secondDiceTextView.text = secondDiceRoll
     }
 }
 
